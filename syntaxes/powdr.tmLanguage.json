@@ -1,0 +1,91 @@
+{
+    "name": "Powdr",
+    "scopeName": "source.powdr",
+    "patterns": [
+        {
+            "name": "keyword.declaration.powdr",
+            "match": "\\b(instr|reg|let|function|operation|machine|with|impl|trait|struct|enum)\\b"
+        },
+        {
+            "name": "keyword.control.powdr",
+            "match": "\\b(if|else|match|return|namespace|mod|use|as|super|link)\\b"
+        },
+        {
+            "name": "keyword.type.powdr",
+            "match": "\\b(pol|col|witness|commit|stage|constant|fixed|query|constr)\\b"
+        },
+        {
+            "name": "storage.type.powdr",
+            "match": "\\b(int|fe|bool|string|col|inter|expr)\\b"
+        },
+        {
+            "name": "variable.identifier.powdr",
+            "match": "\\b[A-Za-z_][a-zA-Z$_0-9@]*\\b"
+        },
+        {
+            "name": "variable.register.powdr",
+            "match": "\\b[A-Za-z_][a-zA-Z$_0-9@]*(?=\\s*\\[(@pc|<=)\\])"
+        },
+        {
+            "name": "entity.name.function.powdr",
+            "match": "\\b[a-z_][a-zA-Z$_0-9@]*(?=\\s*\\()"
+        },
+        {
+            "name": "entity.name.namespace.powdr",
+            "match": "\\b[a-z_][a-zA-Z$_0-9@]*(?=\\.)"
+        },
+        {
+            "name": "constant.numeric.hex.powdr",
+            "match": "0x[0-9A-Fa-f][0-9A-Fa-f_]*(_(fe|int|expr))?"
+        },
+        {
+            "name": "constant.numeric.decimal.powdr",
+            "match": "\\b[0-9][0-9_]*(_(fe|int|expr))?\\b"
+        },
+        {
+            "name": "string.quoted.double.powdr",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.powdr",
+                    "match": "\\\\[tnfbrx'\"\\\\0-9]"
+                }
+            ]
+        },
+        {
+            "name": "comment.line.double-slash.powdr",
+            "match": "//.*$"
+        },
+        {
+            "name": "comment.block.powdr",
+            "begin": "/\\*",
+            "end": "\\*/",
+            "patterns": [
+                {
+                    "name": "comment.block.content.powdr",
+                    "match": "[^/*]+"
+                }
+            ]
+        },
+        {
+            "name": "variable.constant.powdr",
+            "match": "%[a-zA-Z_][a-zA-Z$_0-9@]*"
+        },
+        {
+            "name": "variable.public.powdr",
+            "match": ":[a-zA-Z_][a-zA-Z$_0-9@]*"
+        },
+        {
+            "name": "keyword.operator.powdr",
+            "match": "@pc|<=|<==|=|\\+|-|\\*|/|%|\\*\\*|&&|\\|\\||!|==|!=|>=|>|<=|<|<<|>>|\\||\\^|&|->|=>|~>|\\$|'|\\.\\.|\\.|\\.\\."
+        },
+        {
+            "name": "meta.path.powdr",
+            "match": "::|\\b[a-z_][a-zA-Z$_0-9@]*::"
+        }
+    ],
+    "fileTypes": [
+        "powdr"
+    ]
+}
