@@ -14,10 +14,11 @@ export function activate(context: ExtensionContext) {
     const platform = os.platform();
     const executable = platform === 'win32' ? 'powdr-lsp.exe' : 'powdr-lsp';
 
-    // Get the server path relative to the extension
-    const serverPath = context.asAbsolutePath(
-        path.join('server', 'bin', executable)
-    );
+    //const serverPath = context.asAbsolutePath(
+    //    path.join('server', 'bin', executable)
+    //);
+
+    const serverPath = path.join(__dirname, '../../../powdr-lsp/target/debug/powdr-lsp');
 
     const serverOptions: ServerOptions = {
         run: {

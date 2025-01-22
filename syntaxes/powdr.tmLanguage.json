@@ -4,35 +4,31 @@
     "patterns": [
         {
             "name": "keyword.declaration.powdr",
-            "match": "\\b(instr|reg|let|function|operation|machine|with|impl|trait|struct|enum)\\b"
+            "match": "\\b(let|namespace)\\b"
         },
         {
             "name": "keyword.control.powdr",
-            "match": "\\b(if|else|match|return|namespace|mod|use|as|super|link)\\b"
+            "match": "\\b(if|else|match|return|mod|use|as|super)\\b"
         },
         {
-            "name": "keyword.type.powdr",
-            "match": "\\b(pol|col|witness|commit|stage|constant|fixed|query|constr)\\b"
+            "name": "keyword.type.column.powdr",
+            "match": "\\b(col)\\s+(fixed|witness|commit|stage|constant|query)\\b"
         },
         {
-            "name": "storage.type.powdr",
-            "match": "\\b(int|fe|bool|string|col|inter|expr)\\b"
+            "name": "storage.type.primitive.powdr",
+            "match": "\\b(int|fe|bool|string|inter|expr)\\b"
+        },
+        {
+            "name": "keyword.operator.lookup.powdr",
+            "match": "\\b(in|is)\\b"
+        },
+        {
+            "name": "variable.column.powdr",
+            "match": "\\b[A-Z][A-Z_0-9]*\\b"
         },
         {
             "name": "variable.identifier.powdr",
-            "match": "\\b[A-Za-z_][a-zA-Z$_0-9@]*\\b"
-        },
-        {
-            "name": "variable.register.powdr",
-            "match": "\\b[A-Za-z_][a-zA-Z$_0-9@]*(?=\\s*\\[(@pc|<=)\\])"
-        },
-        {
-            "name": "entity.name.function.powdr",
-            "match": "\\b[a-z_][a-zA-Z$_0-9@]*(?=\\s*\\()"
-        },
-        {
-            "name": "entity.name.namespace.powdr",
-            "match": "\\b[a-z_][a-zA-Z$_0-9@]*(?=\\.)"
+            "match": "\\b[a-z_][a-zA-Z$_0-9@]*\\b"
         },
         {
             "name": "constant.numeric.hex.powdr",
@@ -77,8 +73,24 @@
             "match": ":[a-zA-Z_][a-zA-Z$_0-9@]*"
         },
         {
-            "name": "keyword.operator.powdr",
-            "match": "@pc|<=|<==|=|\\+|-|\\*|/|%|\\*\\*|&&|\\|\\||!|==|!=|>=|>|<=|<|<<|>>|\\||\\^|&|->|=>|~>|\\$|'|\\.\\.|\\.|\\.\\."
+            "name": "keyword.operator.arithmetic.powdr",
+            "match": "\\+|-|\\*|/|%|\\*\\*"
+        },
+        {
+            "name": "keyword.operator.logical.powdr",
+            "match": "&&|\\|\\||!"
+        },
+        {
+            "name": "keyword.operator.comparison.powdr",
+            "match": "==|!=|>=|>|<=|<"
+        },
+        {
+            "name": "keyword.operator.bitwise.powdr",
+            "match": "<<|>>|\\||\\^|&"
+        },
+        {
+            "name": "keyword.operator.special.powdr",
+            "match": "\\$|'|\\.\\.|\\.|\\.\\."
         },
         {
             "name": "meta.path.powdr",
@@ -86,6 +98,6 @@
         }
     ],
     "fileTypes": [
-        "powdr"
+        "pil"
     ]
 }

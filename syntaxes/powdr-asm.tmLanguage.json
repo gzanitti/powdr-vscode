@@ -1,0 +1,107 @@
+{
+    "name": "Powdr Assembly",
+    "scopeName": "source.powdr-asm",
+    "patterns": [
+        {
+            "name": "keyword.declaration.machine.powdr-asm",
+            "match": "\\b(machine|with)\\b"
+        },
+        {
+            "name": "keyword.declaration.instruction.powdr-asm",
+            "match": "\\b(instr|link|function|operation)\\b"
+        },
+        {
+            "name": "keyword.declaration.register.powdr-asm",
+            "match": "\\b(reg)\\b"
+        },
+        {
+            "name": "keyword.control.flow.powdr-asm",
+            "match": "\\b(if|else|return)\\b"
+        },
+        {
+            "name": "storage.type.column.powdr-asm",
+            "match": "\\b(col)\\s+(fixed|witness)\\b"
+        },
+        {
+            "name": "variable.register.powdr-asm",
+            "match": "\\b[A-Za-z_][a-zA-Z$_0-9@]*(?=\\s*\\[(@pc|<=)\\])"
+        },
+        {
+            "name": "entity.name.function.instruction.powdr-asm",
+            "match": "\\b[a-z_][a-zA-Z$_0-9@]*(?=\\s+[A-Za-z_][a-zA-Z$_0-9@]*\\s*->)"
+        },
+        {
+            "name": "variable.parameter.instruction.powdr-asm",
+            "match": "\\b[A-Za-z_][a-zA-Z$_0-9@]*(?=\\s*->)"
+        },
+        {
+            "name": "variable.parameter.instruction.output.powdr-asm",
+            "match": "(?<=->\\s*)[A-Za-z_][a-zA-Z$_0-9@]*\\b"
+        },
+        {
+            "name": "entity.name.function.call.powdr-asm",
+            "match": "\\b[a-z_][a-zA-Z$_0-9@]*(?=\\s*\\()"
+        },
+        {
+            "name": "constant.numeric.hex.powdr-asm",
+            "match": "0x[0-9A-Fa-f][0-9A-Fa-f_]*(_(fe|int|expr))?"
+        },
+        {
+            "name": "constant.numeric.decimal.powdr-asm",
+            "match": "\\b[0-9][0-9_]*(_(fe|int|expr))?\\b"
+        },
+        {
+            "name": "string.quoted.double.powdr-asm",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.powdr-asm",
+                    "match": "\\\\[tnfbrx'\"\\\\0-9]"
+                }
+            ]
+        },
+        {
+            "name": "comment.line.double-slash.powdr-asm",
+            "match": "//.*$"
+        },
+        {
+            "name": "comment.block.powdr-asm",
+            "begin": "/\\*",
+            "end": "\\*/",
+            "patterns": [
+                {
+                    "name": "comment.block.content.powdr-asm",
+                    "match": "[^/*]+"
+                }
+            ]
+        },
+        {
+            "name": "keyword.operator.register.flag.powdr-asm",
+            "match": "@pc|<="
+        },
+        {
+            "name": "keyword.operator.assignment.powdr-asm",
+            "match": "<=|<==|="
+        },
+        {
+            "name": "keyword.operator.arrow.powdr-asm",
+            "match": "->|=>|~>"
+        },
+        {
+            "name": "keyword.operator.arithmetic.powdr-asm",
+            "match": "\\+|-|\\*|/|%|\\*\\*"
+        },
+        {
+            "name": "keyword.operator.logical.powdr-asm",
+            "match": "&&|\\|\\||!"
+        },
+        {
+            "name": "keyword.operator.comparison.powdr-asm",
+            "match": "==|!=|>=|>|<=|<"
+        }
+    ],
+    "fileTypes": [
+        "asm"
+    ]
+}

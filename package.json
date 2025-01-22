@@ -40,8 +40,8 @@
             },
             {
                 "language": "powdr-asm",
-                "scopeName": "source.powdr",
-                "path": "./syntaxes/powdr.tmLanguage.json"
+                "scopeName": "source.powdr-asm",
+                "path": "./syntaxes/powdr-asm.tmLanguage.json"
             }
         ]
     },
